@@ -12,9 +12,13 @@ Another requirement is pdftotext to install it run:
 ``` sudo apt-get xpdf```
 
 ## Running the project
+### Web Interface
 To run the web interface execute:  
-```python app.py```
+```python app.py```  
 
+Then open the following url ```http://127.0.0.1:5000/``` using a web browser.
+
+### CLI
 To generate a meme from the command line run:  
 ```python meme.py```
 
