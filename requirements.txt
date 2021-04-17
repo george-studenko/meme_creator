@@ -1,0 +1,5 @@
+pandas
+pillow
+python-docx
+flask
+requests
