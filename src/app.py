@@ -64,15 +64,17 @@ def meme_post():
     author = json.get('author', None)
 
     quote = QuoteModel(body, author)
+    try:
+        tmp_img = requests.get(url)
+        img = Image.open(BytesIO(tmp_img.content))
+        tmp_img_path = 'tmp.jpg'
+        img.save(tmp_img_path)
 
-    tmp_img = requests.get(url)
-    img = Image.open(BytesIO(tmp_img.content))
-    tmp_img_path = 'tmp.jpg'
-    img.save(tmp_img_path)
-
-    path = meme.make_meme(tmp_img_path, quote.body, quote.author)
-    os.remove(tmp_img_path)
-    return render_template('meme.html', path=path)
+        path = meme.make_meme(tmp_img_path, quote.body, quote.author)
+        os.remove(tmp_img_path)
+        return render_template('meme.html', path=path)
+    except Exception:
+        return render_template('meme_form.html', error='The provided url is not an image.')
 
 
 if __name__ == "__main__":
