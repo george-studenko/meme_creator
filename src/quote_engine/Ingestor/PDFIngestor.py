@@ -1,3 +1,4 @@
+"""This module is in charge of loading quotes from PDF files."""
 from typing import List
 
 from .IngestorInterface import IngestorInterface
@@ -7,10 +8,13 @@ import os
 
 
 class PDFIngestor(IngestorInterface):
+    """This module is in charge of loading quotes from pdf files."""
+
     allowed_extensions = ['pdf']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
+        """Parse pdf and return list of quotes."""
         quotes = []
 
         text_file_path = 'text.txt'
@@ -25,4 +29,4 @@ class PDFIngestor(IngestorInterface):
             os.remove(text_file_path)
             return quotes
         except Exception as exception:
-            raise exception
+            raise exception('An error occurred when trying to parse a pdf file')

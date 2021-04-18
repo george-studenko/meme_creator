@@ -1,3 +1,4 @@
+"""This module is in charge of the loading quotes."""
 from .CSVIngestor import CSVIngestor
 from .TXTIngestor import TXTIngestor
 from .PDFIngestor import PDFIngestor

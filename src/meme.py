@@ -1,3 +1,4 @@
+"""CLI app to allow users create memes using the command line."""
 import os
 import random
 import argparse
@@ -6,8 +7,9 @@ from quote_engine.Ingestor import Ingestor
 from quote_engine import QuoteModel
 from meme_engine.MemeEngine import MemeEngine
 
+
 def generate_meme(path=None, body=None, author=None):
-    """ Generate a meme given an path and a quote """
+    """Generate a meme given an path and a quote."""
     img = None
     quote = None
 
@@ -43,9 +45,21 @@ def generate_meme(path=None, body=None, author=None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Meme generator')
-    parser.add_argument('--body',  type=str, help='quote body to add to the image', default=None)
-    parser.add_argument('--author',  type=str, help='quote author to add to the image', default=None)
-    parser.add_argument('--path',  type=str, help='path to an image file', default=None)
+    parser.add_argument(
+        '--body',
+        type=str,
+        help='quote body to add to the image',
+        default=None)
+    parser.add_argument(
+        '--author',
+        type=str,
+        help='quote author to add to the image',
+        default=None)
+    parser.add_argument(
+        '--path',
+        type=str,
+        help='path to an image file',
+        default=None)
 
     args = parser.parse_args()
     print(generate_meme(args.path, args.body, args.author))
