@@ -23,4 +23,5 @@ class TXTIngestor(IngestorInterface):
                         quotes.append(QuoteModel(body, author))
             return quotes
         except Exception as exception:
-            raise exception('An error occurred when trying to parse a txt file')
+            raise exception(
+                'An error occurred when trying to parse a txt file')

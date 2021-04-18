@@ -1,4 +1,6 @@
 """Quote model."""
+
+
 class QuoteModel:
     """The model to contain quotes."""
 

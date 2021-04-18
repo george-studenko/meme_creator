@@ -29,4 +29,5 @@ class PDFIngestor(IngestorInterface):
             os.remove(text_file_path)
             return quotes
         except Exception as exception:
-            raise exception('An error occurred when trying to parse a pdf file')
+            raise exception(
+                'An error occurred when trying to parse a pdf file')

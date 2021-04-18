@@ -74,7 +74,8 @@ def meme_post():
         os.remove(tmp_img_path)
         return render_template('meme.html', path=path)
     except Exception:
-        return render_template('meme_form.html', error='The provided url is not an image.')
+        return render_template(
+            'meme_form.html', error='The provided url is not an image.')
 
 
 if __name__ == "__main__":

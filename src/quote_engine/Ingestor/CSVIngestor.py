@@ -24,4 +24,5 @@ class CSVIngestor(IngestorInterface):
 
             return quotes
         except Exception as exception:
-            raise exception('An error occurred when trying to parse a csv file')
+            raise exception(
+                'An error occurred when trying to parse a csv file')

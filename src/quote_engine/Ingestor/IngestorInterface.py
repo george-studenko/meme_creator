@@ -11,7 +11,7 @@ class IngestorInterface(ABC):
 
     @classmethod
     def can_ingest(cls, path: str):
-        """To check if the file can be ingested by the concrete ingestor implementation."""
+        """To check if the file can be ingested."""
         ext = path.split('.')[-1]
         return ext in cls.allowed_extensions
 
