@@ -19,7 +19,7 @@ class PDFIngestor(IngestorInterface):
 
         text_file_path = 'text.txt'
         try:
-            call = subprocess.call(['pdftotext', path, text_file_path])
+            subprocess.call(['pdftotext', path, text_file_path])
             with open(text_file_path, 'r') as txt:
                 rows = txt.readlines()
                 for row in rows:
